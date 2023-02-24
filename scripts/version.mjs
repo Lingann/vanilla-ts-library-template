@@ -52,7 +52,7 @@ packageJson.version = newVersion;
 
 fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
-execSync("git add package.json", { stdio: "inherit" });
+execSync("git add .", { stdio: "inherit" });
 
 execSync(`git commit -m "release: ${newVersion}"`, { stdio: "inherit" });
 
