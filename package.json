@@ -1,6 +1,6 @@
 {
   "name": "vanilla-ts-library-template",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ts-library 原生模板",
   "main": "index.ts",
   "module": "esm/index.js",
