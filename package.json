@@ -1,8 +1,8 @@
 {
   "name": "vanilla-ts-library-template",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ts-library 原生模板",
-  "main": "index.ts",
+  "main": "esm/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "files": [
@@ -16,7 +16,8 @@
     "build:umd": "cross-env NODE_ENV=production webpack --config config/webpack.umd.js",
     "build:lib": "cross-env NODE_ENV=production webpack --config config/webpack.lib.js",
     "build:esm": "tsc --build --force tsconfig.esm.json",
-    "tsc": "tsc --build --force tsconfig.json"
+    "tsc": "tsc --build --force tsconfig.json",
+    "version": "node scripts/version.mjs"
   },
   "repository": {
     "type": "git",

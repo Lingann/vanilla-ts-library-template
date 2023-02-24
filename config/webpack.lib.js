@@ -13,7 +13,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.lib,
-    filename: "sample.js",
+    filename: "[name].js",
     libraryTarget: "commonjs",
   },
   module: {

@@ -1,8 +1,4 @@
-export type Plugin = {
-  name: string;
-  version: string;
-  register: (server: any, options: any) => Promise<void>;
-};
+import { HttpOptions } from "./types/option";
 
 export function setup(_options: any): any {
   // ...
@@ -11,20 +7,6 @@ export function setup(_options: any): any {
     name: NAME,
     version: "1.0.0",
   };
-}
-
-export interface HttpOptions {
-  method?: string;
-  headers?: any;
-  body?: any;
-  params?: any;
-  data?: any;
-  timeout?: number;
-  credentials?: RequestCredentials;
-  mode?: RequestMode;
-  cache?: RequestCache;
-  redirect?: RequestRedirect;
-  referrer?: string;
 }
 
 /**
@@ -47,3 +29,9 @@ export function http(url: string, options: HttpOptions = {}): Promise<any> {
     xhr.send(options.body);
   });
 }
+
+export const Vanilla = {
+  http,
+};
+
+export default Vanilla;

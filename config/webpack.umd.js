@@ -13,13 +13,13 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.dist,
-    filename: "sample.min.js",
+    filename: "[name].min.js",
     libraryTarget: "umd",
   },
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -76,10 +76,6 @@ module.exports = merge(common, {
       root: paths.root, //根目录
       verbose: true, //开启在控制台输出信息
       dry: false,
-    }),
-    new MiniCssExtractPlugin({
-      filename: "renderer.css",
-      chunkFilename: "[id].css",
     }),
   ],
   optimization: {
