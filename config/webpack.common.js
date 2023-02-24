@@ -39,24 +39,6 @@ module.exports = {
   // Determine how modules within the project are treated
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "ts-loader",
-          },
-          {
-            loader: "babel-loader",
-            options: { babelrc: true },
-          },
-        ],
-      },
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
       // Images: Copy image files to build folder
       { test: /\.(?:vm|ftl)$/i, type: "asset/source" },
 
@@ -69,7 +51,7 @@ module.exports = {
 
   resolve: {
     modules: [paths.src, "node_modules"],
-    extensions: [".js", ".ts", ".jsx", ".json"],
+    extensions: [".js", ".ts", ".tsx", ".jsx", ".json"],
     alias: {
       "@": paths.src,
       assets: paths.public,

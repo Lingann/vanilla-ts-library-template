@@ -19,6 +19,43 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        // 匹配ts和tsx文件
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+          },
+          {
+            loader: "babel-loader",
+            options: { babelrc: true },
+          },
+        ],
+      },
+      {
+        test: /\.(m|c)?jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: { babelrc: true },
+          },
+        ],
+      },
+      // JavaScript: Use Babel to transpile JavaScript files
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              babelrc: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(sass|scss|css)$/,
         use: [
           {
@@ -46,9 +83,9 @@ module.exports = merge(common, {
     minimize: false,
     minimizer: [],
   },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
+  // performance: {
+  //   hints: false,
+  //   maxEntrypointSize: 512000,
+  //   maxAssetSize: 512000,
+  // },
 });

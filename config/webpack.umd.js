@@ -19,6 +19,19 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.tsx$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+          },
+          {
+            loader: "babel-loader",
+            options: { babelrc: true },
+          },
+        ],
+      },
+      {
         test: /\.(m|c)?jsx?$/,
         exclude: /node_modules/,
         use: [
