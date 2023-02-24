@@ -1,3 +1,3 @@
 # vanilla-ts-library-template
 
-测试原生的 ts 库模板
+使用 webpack + typescript + babel 构建兼容 IE8 浏览器以上的代码库
