@@ -1,0 +1,83 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "jsxPragma": "React",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "indent": ["error", 2], // 设置缩进为2个空格
+    "max-len": [
+      "error",
+      {
+        "code": 140,
+        "ignoreUrls": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": true
+      }
+    ],
+    "no-console": "off", // console
+    "no-use-before-define": "off", // 使用前定义
+
+    "prefer-template": "error", // 字符串拼接
+    "no-var": "error", // var
+    "camelcase": "error", // 驼峰命名
+
+    "@typescript-eslint/ban-ts-ignore": "off", // ts-ignore
+    "@typescript-eslint/explicit-function-return-type": "off", // 函数返回值类型
+    "@typescript-eslint/no-explicit-any": "off", // any类型
+    "@typescript-eslint/no-var-requires": "off", // require
+    "@typescript-eslint/no-empty-function": "off", // 空函数
+    "@typescript-eslint/no-use-before-define": "off", // 使用前定义
+    "@typescript-eslint/ban-ts-comment": "off", // ts注释
+    "@typescript-eslint/ban-types": "off", // 禁止使用某些类型
+    "@typescript-eslint/no-non-null-assertion": "off", // 非空断言
+    "@typescript-eslint/explicit-module-boundary-types": "off", // 模块边界类型
+    "@typescript-eslint/promise-function-async": "off", // 异步函数
+    "@typescript-eslint/no-unused-vars": [
+      // 未使用变量
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        // "no-undef": "off"
+      }
+    },
+    {
+      "files": "**/*.d.ts",
+      "rules": {
+        "import/no-duplicates": "off"
+      }
+    }
+  ],
+  "ignorePatterns": ["node_modules", "dist", "lib", "es"]
+}

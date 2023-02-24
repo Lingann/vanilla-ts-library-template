@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化工具
+  "editor.formatOnSave": true, // 保存自动格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // 保存自动修复, 需要安装 ESLint 插件
+  },
+  "cSpell.words": []
+}

@@ -1,0 +1,61 @@
+{
+  "name": "vanilla-ts-library-template",
+  "version": "1.0.0",
+  "description": "ts-library 原生模板",
+  "main": "index.ts",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "files": [
+    "esm",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "build": "npm run build:umd && npm run build:lib && npm run build:esm",
+    "build:umd": "cross-env NODE_ENV=production webpack --config config/webpack.umd.js",
+    "build:lib": "cross-env NODE_ENV=production webpack --config config/webpack.lib.js",
+    "build:esm": "tsc --build --force tsconfig.esm.json",
+    "tsc": "tsc --build --force tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lingann/vanilla-ts-library-template.git"
+  },
+  "author": "lingann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lingann/vanilla-ts-library-template/issues"
+  },
+  "homepage": "https://github.com/Lingann/vanilla-ts-library-template#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-arrow-functions": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "core-js": "^3.28.0",
+    "cross-env": "^7.0.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.17.10",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fork-ts-checker-webpack-plugin": "^7.3.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "prettier": "^2.8.4",
+    "terser-webpack-plugin": "^5.3.6",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0",
+    "webpackbar": "^5.0.2"
+  }
+}
